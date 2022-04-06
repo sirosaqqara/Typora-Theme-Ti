@@ -1,0 +1,602 @@
+/* ---------------------------------------------字体--------------------------------------------- */
+@font-face {
+  font-family: 'Galaxy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  src: local('Galaxy'), local('Oxygen-Regular'),url('./ti/Roboto.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Galaxy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  src: local('Galaxy Bold'), local('Oxygen-Bold'), url('./ti/Roboto.woff') format('woff');
+}
+
+/* ---------------------------------------------root--------------------------------------------- */
+:root {
+    --bg-color:  #23272e;
+    --side-bar-bg-color: #1e2227;
+    --text-color: #cdcbcb;
+
+    --select-text-bg-color:#4a89dc;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px solid #555;
+
+    --active-file-bg-color: #323842;
+    --active-file-border-color: #60ffdc;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: white;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+
+    --rawblock-edit-panel-bd: #333;
+
+    --search-select-bg-color: #b3f4f5;
+    --mermaid-theme: dark;
+}
+
+/* ---------------------------------------------全局属性--------------------------------------------- */
+#write{
+  max-width: 900px;
+  font-size: 20px;
+  font-family: "Galaxy", sans-serif;
+}
+
+a {
+    color:blue;
+    font-weight: 500;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------链接--------------------------------------------- */
+#write a {
+    color: rgb(28, 154, 143);
+    text-decoration: none;
+}
+
+#write a:hover {
+    border-bottom: 2px solid rgb(34, 192, 178);
+    color: rgb(34, 192, 178);
+}
+
+/* ---------------------------------------------目录--------------------------------------------- */
+#write a.md-toc-inner {
+    white-space: pre-line;
+    border-bottom: none;
+}
+
+#write a.md-toc-inner:hover{
+    border-bottom: 2px solid rgb(34, 192, 178);
+}
+
+/* ---------------------------------------------段落--------------------------------------------- */
+#write p {
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0;
+  word-spacing: .05rem;
+  line-height: 2.0rem;
+}
+
+/* ---------------------------------------------标题--------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit !important;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit !important;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit !important;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit !important;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit !important;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit !important;
+}
+
+h2 a,
+h3 a {
+    color: #34495e;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 0.3rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin: 2.4rem auto 1.2rem;
+    color: white;
+}
+
+h1:after {
+    content: '';
+    display: block;
+    margin: 0.2rem auto 0;
+    width: 100px;
+    height: 2px;
+    border-bottom: 2px solid rgb(142, 255, 167);
+}
+
+h2 {
+    margin: 2rem auto 1.4rem;
+    line-height: 1.4;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #8effc5;
+}
+
+h2::before {
+    content: '# '!important;
+    color: #8effc5;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.43;
+    margin: 1.6rem auto 1.2rem;
+    padding-left: 9px;
+    border-left: 5px solid #8effc5;
+}
+
+h4 {
+    font-size: 1.2rem;
+    padding-left: 6px;
+    padding-right: 6px;
+    display: inline-block;
+    border: 1px solid #8effc5;
+    border-top: 4px solid #8effc5;
+}
+
+#write h5::before,
+#write h6::before {
+    position: absolute;
+    right: calc(100% + .75rem);
+    top: 0;
+    color: #aeffd5;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-variant: 'small-caps';
+    white-space: nowrap;
+    /* 文本强制不换行 */
+    border: 0;
+}
+
+#write h5 {
+    font-size: 1.4rem;
+}
+
+#write h6 {
+    font-size: 1.4rem;
+}
+
+#write h5::before {
+    content: 'H5';
+    top: 0.18rem;
+}
+
+#write h6::before {
+    content: 'H6';
+    top: 0.18rem;
+}
+
+/* ---------------------------------------------代码块--------------------------------------------- */
+#write .md-fences {
+    -webkit-font-smoothing: initial;
+    margin: 0.5rem 0 !important;
+    padding: 3px 5px;
+    line-height: 1.55rem;
+    border-radius: 5px;
+    font-family: Menlo !important;
+    font-size: 17px;
+    font-weight: normal;
+    word-wrap: normal;
+}
+.cm-s-inner.CodeMirror {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #292d3e;
+  color: #a6accd;
+  font-family: Consolas;
+  border-radius: 4px;
+}
+.CodeMirror-lines {
+  padding-left: 4px;
+}
+.cm-s-inner .cm-keyword {
+  color: #c792ea;
+}
+.cm-s-inner .cm-operator {
+  color: #cfff00;
+}
+.cm-s-inner .cm-variable-2 {
+  color: #eeffff;
+}
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+  color: #8effd4;
+}
+.cm-s-inner .cm-builtin {
+  color: #ffcb6b;
+}
+.cm-s-inner .cm-atom {
+  color: #f78c6c;
+}
+.cm-s-inner .cm-number {
+  color: #00b0ff;
+}
+.cm-s-inner .cm-def {
+  color: #82aaff;
+}
+.cm-s-inner .cm-string {
+  color: #c3e88d;
+}
+.cm-s-inner .cm-string-2 {
+  color: #8effd4;
+}
+.cm-s-inner .cm-comment {
+  color: #676e95;
+}
+.cm-s-inner .cm-variable {
+  color: #8effd4;
+}
+.cm-s-inner .cm-tag {
+  color: #ff5370;
+}
+.cm-s-inner .cm-meta {
+  color: #ffcb6b;
+}
+.cm-s-inner .cm-attribute {
+  color: #c792ea;
+}
+.cm-s-inner .cm-property {
+  color: #c792ea;
+}
+.cm-s-inner .cm-qualifier {
+  color: #ff5370;
+}
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+  color: #deB900;
+}
+.cm-s-inner .cm-error {
+  color: rgba(255, 255, 255, 1);
+  background-color: #ff5370;
+}
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid #80ff94;
+  z-index: 3;
+}
+
+/* ---------------------------------------------一些边界设置--------------------------------------------- */
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8rem 0;
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+
+body>h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h1:first-child+h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body>h3:first-child,
+body>h4:first-child,
+body>h5:first-child,
+body>h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+/* ---------------------------------------------引用--------------------------------------------- */
+blockquote p:first-of-type::before{
+    content: "”";
+    position: relative;
+    font-size: 2.5rem;
+    padding: 0 .5rem;
+    color: #50ffc0;
+    font-family: Arial, serif;
+    line-height: 1rem;
+    font-weight: 700;
+  }
+
+blockquote {
+    border: 2px double #2e8968;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    margin: 3rem auto;
+    padding: 10px 15px 10px;
+    color: #808080 !important;
+    font-family: "kaiti" !important;
+  }
+
+/* ---------------------------------------------行内代码--------------------------------------------- */
+#write code,
+tt{
+    color: #3cc9c6;
+    background-color: rgba(109, 125, 124, 0.2);
+    font-family: Consolas, 'Galaxy', sans-serif;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    margin: 0 4px;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+/* ---------------------------------------------高亮--------------------------------------------- */
+#write mark {
+    background-color: #00ff9c;
+    padding: 2px 2px;
+    margin: 0 2px;
+    border-radius: 5px;
+  }
+
+/* ---------------------------------------------表格--------------------------------------------- */
+table {
+    padding: 0;
+    word-break: initial;
+  }
+
+#write table tr th {
+    border: 1px solid #8effd4;
+    color: #00ffad;
+    border-bottom: 0;
+    padding: 5px 8px;
+  }
+
+#write table tr td {
+    border: 1px solid #8effd4;
+    padding: 5px 8px;
+  }
+
+/* ---------------------------------------------分割线--------------------------------------------- */
+#write hr{
+    height:1px;
+    padding:0;
+    border:none;
+    text-align:center;
+    background-image:linear-gradient(to right,rgba(255,255,255,0), #389894, rgba(255,255,255,0));
+    margin: 1rem auto;
+  }
+
+/* ---------------------------------------------脚注上标--------------------------------------------- */
+#write .md-footnote {
+    color: #a4ffd0;
+    font-family: Consolas;
+    background-color: rgba(76, 76, 76, 0.2);
+  }
+ #write .md-footnote > .md-text:before {
+    content: '['
+  }
+ #write .md-footnote > .md-text:after {
+    content: ']'
+  }
+ 
+/* ---------------------------------------------脚注--------------------------------------------- */
+ #write .md-def-name {
+    font-size: 1rem;
+    margin-left: -1rem;
+    margin-right: -1.2rem;
+    color: #a4ffd0;
+  }
+
+ #write .md-def-name:before {
+    content: '';
+    color: #262626;
+  }
+ 
+ #write .md-def-name:after {
+    color: #262626;
+    content: '';
+  }
+
+/* ---------------------------------------------列表--------------------------------------------- */
+#write ol,
+#write ul {
+    padding-left: 25px;
+    margin: .5rem 0;
+}
+
+#write ol>li,
+#write ul>li {
+    color: #a4ffd0;
+    font-weight: normal;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    color: #cdcbcb;
+    font-weight: bold;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+    padding-left: .25rem;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+/* ---------------------------------------------加粗--------------------------------------------- */
+#write strong {
+    padding: 0 2px;
+    color: #66ffc4;
+    font-weight: 700;
+  }
+
+/* ---------------------------------------------删除线--------------------------------------------- */
+#write del {
+    padding: 1px 2px;
+    text-decoration: line-through rgba(194, 255, 232, 0.4);
+    color: #808080;
+  }
+
+/* ---------------------------------------------斜体--------------------------------------------- */
+#write em {
+    padding: 0 3px;
+  }
+
+/* ---------------------------------------------加粗斜体 这里为渐变字效果--------------------------------------------- */
+#write em strong{
+  background: -webkit-linear-gradient(left, #0BABAB, #a8acff);
+  background: -o-linear-gradient(right, #0BABAB, #a8acff);
+  background: -moz-linear-gradient(right, #0BABAB, #a8acff);
+  background: linear-gradient(to right, #0BABAB, #a8acff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* ---------------------------------------------流程图块--------------------------------------------- */
+#write .md-diagram-panel {
+  position: relative;
+  margin: 24px auto;
+}
+
+#write .md-focus .md-diagram-panel {
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+/* ---------------------------------------------图片--------------------------------------------- */
+#write img {
+    max-width: 95% ;
+    border-radius: 5px;
+    margin:1.2rem auto;
+  }
+
+.md-image img[alt|='radius'] {
+    border-radius: 10px;
+    border: none !important;
+  }
+
+/* ---------------------------------------------任务列表--------------------------------------------- */
+.md-task-list-item > input {
+    margin-left: -1.3rem;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+  }
+
+#write .md-task-list-item > input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+.md-task-list-item > input:before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--mid-1);
+    border-radius: 2px;
+    border: 1px solid #6ef6f3;
+    margin-top: -0.35rem;
+    transition: all 0.2s linear;
+  }
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    content: '\2714';
+    font-size: 0.625rem;
+    color: #f4fefe;
+    border: 1px solid #50f4f0;
+    background-color: #50f4f0;
+  }
+
+#write .md-task-list-item.task-list-done > p {
+    color: #808080;
+    text-decoration: line-through;
+  }
