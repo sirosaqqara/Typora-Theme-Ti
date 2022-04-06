@@ -1,4 +1,4 @@
-# Typora-Theme
+# Typora-Theme-Ti
 a Typora theme inspired by [sspai](https://github.com/wilde3/typora-theme-redrail) and [xiaoya](https://github.com/pyrrole-ach/typora-theme-xiaoya)<br><br>
 English | [中文](https://github.com/sirosaqqara/Typora-Theme-Ti/blob/main/README_CN.md)
 
