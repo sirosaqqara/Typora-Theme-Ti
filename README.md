@@ -1,5 +1,6 @@
 # Typora-Theme
-a Typora theme inspired by [sspai](https://github.com/wilde3/typora-theme-redrail) and [xiaoya](https://github.com/pyrrole-ach/typora-theme-xiaoya)
+a Typora theme inspired by [sspai](https://github.com/wilde3/typora-theme-redrail) and [xiaoya](https://github.com/pyrrole-ach/typora-theme-xiaoya)<br><br>
+English | [中文](https://github.com/sirosaqqara/Typora-Theme-Ti/blob/main/README_CN.md)
 
 ## Introduction
 When I used the [sspai](https://github.com/wilde3/typora-theme-redrail) theme for the first time, I was amazed by the refreshing effect it presented . <br>
